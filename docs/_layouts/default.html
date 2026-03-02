@@ -2,25 +2,187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Trans Admin Documentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 2rem; font-family: Arial, sans-serif; }
+    h2, h3, h4 { margin-top: 2rem; }
+    .card { border-radius: 8px; margin-bottom: 1rem; }
+    .table th, .table td { vertical-align: middle; }
+    pre { background: #f8f9fa; padding: 1rem; border-radius: 4px; }
+  </style>
 </head>
 <body>
 
-<header style="background:#159957;padding:15px;">
-  <nav style="display:flex;gap:20px;">
-    <a href="{{ '/' | relative_url }}" style="color:white;">Home</a>
-    <a href="{{ '/installation' | relative_url }}" style="color:white;">Installation</a>
-    <a href="{{ '/usage' | relative_url }}" style="color:white;">Usage</a>
-    <a href="{{ '/api' | relative_url }}" style="color:white;">API Reference</a>
-    <a href="{{ '/architecture' | relative_url }}" style="color:white;">Architecture</a>
-    <a href="{{ '/screenshots' | relative_url }}" style="color:white;">Screenshots</a>
-  </nav>
-</header>
+  <h1 class="mb-4">E-Trans Admin Documentation</h1>
 
-<section class="main-content">
-  {{ content }}
-</section>
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#modules">Modules</a>
+      <ul>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#customer">Customer</a></li>
+        <li><a href="#vehicle">Vehicle</a></li>
+        <li><a href="#routes">Routes</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#trips">Trips</a></li>
+        <li><a href="#bill">Bill</a></li>
+        <li><a href="#credit-note">Credit Note</a></li>
+        <li><a href="#dashboard-summary">Dashboard Summary</a></li>
+        <li><a href="#gstr1-report">GSTR-1 Report</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-mapping">API Mapping</a></li>
+    <li><a href="#authentication">Authentication & Refresh</a></li>
+  </ul>
+
+  <hr>
+
+  <h2 id="overview">Overview</h2>
+  <p>The E-Trans Admin system is a comprehensive logistics and transport management platform. It manages companies, customers, vehicles, routes, materials, trips, invoices, credit notes, and provides reporting and analytics.</p>
+
+  <h2 id="modules">Modules</h2>
+
+  <!-- Company Module -->
+  <div id="company" class="card p-3">
+    <h3>Company Module</h3>
+    <ul>
+      <li>Create, edit, and delete company details</li>
+      <li>Store company GSTIN, PAN, and address</li>
+      <li>Link to customers, vehicles, trips, and bills</li>
+    </ul>
+  </div>
+
+  <!-- Customer Module -->
+  <div id="customer" class="card p-3">
+    <h3>Customer Module</h3>
+    <ul>
+      <li>Maintain customer master data</li>
+      <li>Supports GSTIN and non-GST customers</li>
+      <li>Used in trip billing and GSTR reports</li>
+    </ul>
+  </div>
+
+  <!-- Vehicle Module -->
+  <div id="vehicle" class="card p-3">
+    <h3>Vehicle Module</h3>
+    <ul>
+      <li>Register and manage vehicles</li>
+      <li>Track trips and revenue per vehicle</li>
+      <li>Integrates with dashboard vehicle revenue chart</li>
+    </ul>
+  </div>
+
+  <!-- Routes Module -->
+  <div id="routes" class="card p-3">
+    <h3>Routes Module</h3>
+    <ul>
+      <li>Define transport routes</li>
+      <li>Associate trips with source and destination</li>
+      <li>Calculate route-based billing</li>
+    </ul>
+  </div>
+
+  <!-- Materials Module -->
+  <div id="materials" class="card p-3">
+    <h3>Materials Module</h3>
+    <ul>
+      <li>Maintain material master data</li>
+      <li>Track quantities per trip</li>
+      <li>Used in HSN reporting in GSTR-1</li>
+    </ul>
+  </div>
+
+  <!-- Trips Module -->
+  <div id="trips" class="card p-3">
+    <h3>Trips Module</h3>
+    <ul>
+      <li>Log trips with vehicle, customer, and material details</li>
+      <li>Track trip charges and GST for reporting</li>
+      <li>Trip data feeds into bills and dashboard summaries</li>
+    </ul>
+  </div>
+
+  <!-- Bill Module -->
+  <div id="bill" class="card p-3">
+    <h3>Bill Module</h3>
+    <ul>
+      <li>Create invoices for trips</li>
+      <li>Track total amount, received, and balance</li>
+      <li>Supports B2B (GSTIN) and B2C (No GST) differentiation</li>
+    </ul>
+  </div>
+
+  <!-- Credit Note Module -->
+  <div id="credit-note" class="card p-3">
+    <h3>Credit Note Module</h3>
+    <ul>
+      <li>Issue credit notes for billing adjustments</li>
+      <li>Supports customer-wise aggregation</li>
+      <li>Integrated into GSTR-1 reporting and totals</li>
+    </ul>
+  </div>
+
+  <!-- Dashboard Summary -->
+  <div id="dashboard-summary" class="card p-3">
+    <h3>Dashboard Summary Module</h3>
+    <ul>
+      <li>Filters: Year, Month, Quarter, Start/End Date, Search (Customer/Vehicle/Bill No)</li>
+      <li>Summary Cards: Total Revenue, Total Received, Total Pending</li>
+      <li>Charts: Top 5 Customer Revenue, Monthly Trend, Pending vs Received, Vehicle Revenue</li>
+      <li>Paginated Invoices Table</li>
+    </ul>
+  </div>
+
+  <!-- GSTR-1 Report -->
+  <div id="gstr1-report" class="card p-3">
+    <h3>GSTR-1 Report Module</h3>
+    <ul>
+      <li>Filters: Customer, From Date, To Date</li>
+      <li>Summary Cards: Taxable, CGST, SGST, IGST</li>
+      <li>Customer-wise aggregation by GSTIN</li>
+      <li>B2B and B2C invoice segregation</li>
+      <li>HSN summary (material-wise quantity)</li>
+    </ul>
+  </div>
+
+  <h2 id="api-mapping">API Mapping</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Module</th>
+        <th>Endpoint</th>
+        <th>Method</th>
+        <th>Parameters</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Company</td><td>/company</td><td>GET/POST/PUT/DELETE</td><td>id, name, GSTIN, PAN, address</td><td>Manage company master data</td></tr>
+      <tr><td>Customer</td><td>/customer</td><td>GET/POST/PUT/DELETE</td><td>id, name, GSTIN</td><td>Manage customer master data</td></tr>
+      <tr><td>Vehicle</td><td>/vehicle</td><td>GET/POST/PUT/DELETE</td><td>id, number, type</td><td>Manage vehicles</td></tr>
+      <tr><td>Route</td><td>/route</td><td>GET/POST/PUT/DELETE</td><td>id, source, destination</td><td>Manage routes</td></tr>
+      <tr><td>Material</td><td>/material</td><td>GET/POST/PUT/DELETE</td><td>id, name</td><td>Manage materials</td></tr>
+      <tr><td>Trip</td><td>/trip</td><td>GET/POST/PUT/DELETE</td><td>id, vehicleId, customerId, routeId, materialId</td><td>Manage trips</td></tr>
+      <tr><td>Bill</td><td>/bill</td><td>GET/POST/PUT/DELETE</td><td>id, customerId, tripIds</td><td>Generate invoices</td></tr>
+      <tr><td>Credit Note</td><td>/credit-note</td><td>GET/POST/PUT/DELETE</td><td>id, billId, amount</td><td>Issue credit notes</td></tr>
+      <tr><td>Dashboard Summary</td><td>/dashboard/summary</td><td>GET</td><td>year, month, startDate, endDate, search, page, size</td><td>Fetch dashboard summary and charts</td></tr>
+      <tr><td>Dashboard Suggestions</td><td>/dashboard/suggestions</td><td>GET</td><td>query</td><td>Autocomplete for search field</td></tr>
+      <tr><td>GSTR-1 Report</td><td>/dashboard/filter</td><td>GET</td><td>customerId, fromDate, toDate, page, size</td><td>Fetch filtered report data</td></tr>
+      <tr><td>Authentication</td><td>/auth/login</td><td>POST</td><td>username, password</td><td>User login</td></tr>
+      <tr><td>Authentication Refresh</td><td>/auth/refresh</td><td>POST</td><td>refreshToken</td><td>Refresh expired token</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="authentication">Authentication & Refresh Flow</h2>
+  <ul>
+    <li>Axios instance automatically adds <code>Authorization: Bearer &lt;token&gt;</code></li>
+    <li>On 401 errors, refresh token is used to request a new access token</li>
+    <li>Requests are queued while refreshing</li>
+    <li>User is logged out if refresh fails</li>
+  </ul>
 
 </body>
 </html>
