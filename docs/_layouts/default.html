@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<header style="background:#159957;padding:15px;">
+  <nav style="display:flex;gap:20px;">
+    <a href="{{ '/' | relative_url }}" style="color:white;">Home</a>
+    <a href="{{ '/controllers' | relative_url }}" style="color:white;">Controllers</a>
+    <a href="{{ '/services' | relative_url }}" style="color:white;">Service Layer</a>
+    <a href="{{ '/utilities' | relative_url }}" style="color:white;">Utilities</a>
+    <a href="{{ '/database' | relative_url }}" style="color:white;">Database</a>
+    <a href="{{ '/scheduler' | relative_url }}" style="color:white;">Scheduler</a>
+  </nav>
+</header>
+
+<section class="main-content">
+  {{ content }}
+</section>
+
+</body>
+</html>
