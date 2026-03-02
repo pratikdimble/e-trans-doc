@@ -1,149 +1,116 @@
-# Usage Guide
+# Installation & Setup
 
-This guide explains how to use the **E-Trans Dashboard** after installation, including login/signup, navigation, and performing common operations.
+This guide explains how to set up the **E-Trans Dashboard** on your local machine, including backend, frontend, and database configuration.
 
 ---
 
-## 1️⃣ Login / Signup
+## 1️⃣ Clone the Repository
 
-### a. Login
-
-- Navigate to the login page: `http://localhost:5173/login`
-- Enter your credentials (username & password).
-- Upon successful login:
-  - **Admin users**: Access all modules including Companies, Users, Credit Notes, Reports, and GSTR1.
-  - **Company users**: Access Customers, Vehicles, Materials, Routes, Outward Shipments, and Invoices.
-
-**Example using Pinia auth store:**
-
-```javascript id="2aupxq"
-const authStore = useAuthStore()
-await authStore.login('username', 'password')
+```bash
+git clone https://github.com/yourusername/e-trans-dashboard.git
+cd e-trans-dashboard
 ````
 
 ---
 
-### b. Signup
+## 2️⃣ Backend Setup (Spring Boot + PostgreSQL)
 
-* Navigate to the signup page: `http://localhost:5173/signup`
-* Provide a unique username and password.
-* After successful signup, login with the new account.
+### a. Configure PostgreSQL
 
-```javascript id="1gp0q8"
-await authStore.signup('newuser', 'password123')
+1. Install PostgreSQL if you haven’t already.
+2. Create a database, e.g., `etrans_db`.
+3. Update `backend/src/main/resources/application.properties`:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/etrans_db
+spring.datasource.username=your_db_user
+spring.datasource.password=your_db_password
+spring.jpa.hibernate.ddl-auto=update
 ```
 
-* Toast notifications will display success or errors.
+### b. Run the Backend
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+The backend will start on `http://localhost:8080` by default.
 
 ---
 
-## 2️⃣ Dashboard Overview
+## 3️⃣ Frontend Setup (Vue 3 + Pinia)
 
-Once logged in, the main layout consists of:
+### a. Install Dependencies
 
-* **Sidebar (Left)**
+```bash
+cd frontend
+npm install
+```
 
-  * Displays modules based on your role.
-  * Highlights the active page dynamically.
-  * **Admin-only modules:** Companies, Users, Reports, Credit Notes, GSTR1.
-  * **Common modules:** Customers, Materials, Vehicles, Routes, Outward, Invoices.
+### b. Run the Frontend
 
-* **Main Content (Right)**
+```bash
+npm run dev
+```
 
-  * Displays the selected module.
-  * All tables, forms, and dashboards are reactive.
-
-* **Global Toast Notifications**
-
-  * Appears at the top-right for success, warning, or error messages.
+Open your browser at `http://localhost:5173` (or the port shown in the terminal).
 
 ---
 
-## 3️⃣ Key Modules & Actions
+## 4️⃣ Authentication Module
 
-### a. Customers
+The dashboard uses **Pinia** for state management. The `auth` store handles login, signup, and session management:
 
-* Add, edit, and delete customer records.
-* Assign customers to routes or invoices.
+```javascript
+import { useAuthStore } from '@/stores/auth'
 
-### b. Materials
+const authStore = useAuthStore()
 
-* Manage inventory items.
-* Update stock quantities and track material usage.
+// Login
+await authStore.login('username', 'password')
 
-### c. Routes
+// Signup
+await authStore.signup('username', 'password')
 
-* Define routes for logistics operations.
-* Assign vehicles and customers to specific routes.
+// Logout
+authStore.clearAuth()
+```
 
-### d. Vehicles
+**Key features:**
 
-* Add, edit, and remove vehicles.
-* Assign vehicles to routes and track availability.
-
-### e. Outward Shipments
-
-* Manage deliveries and outward shipments.
-* Link shipments to customers, materials, and vehicles.
-
-### f. Invoices
-
-* Generate invoices for deliveries.
-* View invoice history and print/export options.
-
-### g. Reports (Admin Only)
-
-* Generate operational and financial reports.
-* Filter reports by date, company, route, or vehicle.
-
-### h. GSTR1 (Admin Only)
-
-* Export GST-related reports.
-* View tax summaries for filing purposes.
-
-### i. Credit Notes (Admin Only)
-
-* Issue credit notes for returned or canceled orders.
-* Maintain financial accuracy.
+* **Token & Role Storage:** Saved in `localStorage`.
+* **Role-Based Access:** Admin vs Company User dashboards.
+* **Toast Notifications:** Login/signup feedback via `GlobalToast`.
 
 ---
 
-## 4️⃣ Role-Based Access
+## 5️⃣ Environment Variables (Optional)
 
-| Module            | Admin | Company User |
-| ----------------- | :---: | :----------: |
-| Summary Dashboard |   ✅   |       ❌      |
-| Customers         |   ✅   |       ✅      |
-| Materials         |   ✅   |       ✅      |
-| Routes            |   ✅   |       ✅      |
-| Vehicles          |   ✅   |       ✅      |
-| Outward Shipments |   ✅   |       ✅      |
-| Invoices          |   ✅   |       ✅      |
-| Reports           |   ✅   |       ❌      |
-| GSTR1             |   ✅   |       ❌      |
-| Companies         |   ✅   |       ❌      |
-| Users             |   ✅   |       ❌      |
-| Credit Notes      |   ✅   |       ❌      |
+If using a `.env` file for frontend:
+
+```env
+VITE_API_BASE_URL=http://localhost:8080
+```
+
+Make sure the frontend points to the backend API correctly.
 
 ---
 
-## 5️⃣ Tips & Best Practices
+## 6️⃣ Ready to Use
 
-* Always logout after finishing a session using the **Logout button** at the top-right.
-* Use toast notifications to verify successful operations.
-* Admins should set up companies and users before allowing company users to perform operations.
-* Make regular backups of PostgreSQL data to prevent data loss.
+Once both backend and frontend are running:
 
----
-
-## 6️⃣ Troubleshooting
-
-* **Unable to login:** Ensure backend is running and API URL is correct.
-* **Data not showing:** Verify that companies and users exist in the backend.
-* **UI glitches:** Clear browser cache and reload the page.
+* Navigate to `http://localhost:5173` to see the dashboard.
+* Admin login credentials can be configured via backend seed data or created via `/auth/register`.
+* Company users can be added by the Admin after login.
 
 ---
 
-With this guide, both admins and company users can efficiently navigate and operate the **E-Trans Dashboard**.
+## ⚡ Notes
+
+* Ensure your PostgreSQL service is running before starting the backend.
+* The backend supports JWT authentication, so tokens must be stored and passed with requests.
+* Vue 3 components and Pinia stores are reactive; any changes in the auth store will automatically update UI elements like sidebar links.
 
 ```
