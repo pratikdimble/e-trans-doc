@@ -7,7 +7,7 @@ description: Portfolio and documentation site for the E-Trans logistics dashboar
 theme: jekyll-theme-cayman
 
 # Base URL (repository name for GitHub Pages)
-baseurl: "/e-trans-dashboard"
+baseurl: "/e-trans-app"
 
 # Full URL of the site
 url: "https://pratikdimble.github.io"
