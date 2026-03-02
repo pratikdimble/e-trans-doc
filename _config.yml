@@ -15,14 +15,3 @@ url: "https://pratikdimble.github.io"
 # Markdown parser
 markdown: kramdown
 
-# Optional plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Files/folders to exclude from the site
-exclude:
-  - README.md
-  - node_modules
-  - backend/
-  - frontend/
