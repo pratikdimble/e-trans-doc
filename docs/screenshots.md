@@ -7,7 +7,7 @@ This page contains module-wise screenshots of the system.
 ## Master Modules
 
 ### Company
-![Company Module](assets/company.png)
+![Company Module](assets/company-details.png)
 
 ---
 
