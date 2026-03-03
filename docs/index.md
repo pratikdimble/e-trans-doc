@@ -138,4 +138,4 @@ e-trans-dashboard/
 
 This project is licensed under the MIT License.
 
-```
+<a href="{{ '/' | relative_url }}">Home</a>  <a href="{{ '/installation' | relative_url }}">Installation</a>
