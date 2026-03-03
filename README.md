@@ -5,6 +5,11 @@
 **E-Trans** is a full-stack logistics management system built with **Vue 3**, **Java 17 Spring Boot**, and **PostgreSQL**. It provides administrators and company users a modern, responsive dashboard to manage customers, vehicles, routes, materials, invoices, and reports.
 
 ---
+## Documentation
+
+For detailed setup, usage, and API reference, visit the official documentation:  
+
+[E-Trans Documentation](https://pratikdimble.github.io/e-trans-doc/)
 
 ## 🚀 Features
 
