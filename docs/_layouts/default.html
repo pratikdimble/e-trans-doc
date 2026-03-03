@@ -109,8 +109,28 @@
       font-weight: bold;
     }
     
-    .top-header a:hover {
-      text-decoration: underline;
+      .top-header a:hover {
+          text-decoration: underline;
+        }
+    
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Space between text and link */
+        font-size: 0.9rem;
+      }
+  
+    .header-right .contact-link {
+        background: #ffd700;
+        color: #222;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    
+    .header-right .contact-link:hover {
+      background: #e6c200;
     }
     
     /* Adjust main content for header */
@@ -180,8 +200,8 @@
     <strong>E-Trans Documentation</strong>
   </div>
   <div class="header-right">
-    Developed by Pratik Dimble | 
-    <a href="mailto:pratikdimble2238@gmail.com">Contact Me</a>
+    <span>Developed by Pratik Dimble | Tested by Swapnil Kharat</span>
+      <a href="mailto:pratikdimble2238@gmail.com" class="contact-link">Contact Me</a>
   </div>
 </header>
   <!-- Sidebar -->
@@ -237,8 +257,10 @@
   <!-- Footer -->
   <footer>
     <a href="{{ '/' | relative_url }}">⬆ Back to Home</a>
-    <p>© {{ site.time | date: "%Y" }} E-Trans Documentation</p>
-    <p>Developed by Pratik Dimble</p>
+    <p style="text-align:center;">
+      <strong>Developed by:</strong> Pratik Dimble &nbsp;|&nbsp; 
+      <strong>Tested by:</strong> Swapnil Kharat
+    </p>
   </footer>
 
   <!-- Collapsible Script -->
