@@ -130,18 +130,3 @@ e-trans-dashboard/
 ## ⚡ License
 
 This project is licensed under the MIT License.
-
----
-
-## 📌 GitHub Pages
-
-* Enable GitHub Pages with the `docs/` folder as the source.
-* Your documentation will be available at:
-
-```
-https://yourusername.github.io/e-trans-dashboard/
-```
-
----
-
-This README.md **links all docs pages, shows architecture, tech stack, and screenshots**, just like professional GitHub portfolios such as [pratikdimble/eaas-app-doc].([https://pratikdimble.github.io/e-trans-doc]).
