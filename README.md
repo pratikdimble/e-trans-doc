@@ -139,4 +139,4 @@ https://yourusername.github.io/e-trans-dashboard/
 
 ---
 
-This README.md **links all docs pages, shows architecture, tech stack, and screenshots**, just like professional GitHub portfolios such as [pratikdimble/eaas-app-doc]([https://pratikdimble.github.io/e-trans-doc]).
+This README.md **links all docs pages, shows architecture, tech stack, and screenshots**, just like professional GitHub portfolios such as [pratikdimble/eaas-app-doc].([https://pratikdimble.github.io/e-trans-doc]).
