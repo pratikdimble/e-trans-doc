@@ -4,80 +4,118 @@
   <meta charset="UTF-8">
   <title>{{ page.title }} - {{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin:0; padding:0;
-      display: flex;
-      min-height: 100vh;
+    * {
+      box-sizing: border-box;
     }
 
-    /* Sidebar */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+
+    /* ===== Sidebar ===== */
     aside.sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: 250px;
       background: #159957;
       color: white;
       padding: 1rem;
-      flex-shrink: 0;
       overflow-y: auto;
     }
+
     aside.sidebar h2 {
-      font-size: 1.2rem;
       margin-top: 0;
+      font-size: 1.2rem;
       margin-bottom: 1rem;
     }
+
     aside.sidebar ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     aside.sidebar li {
       margin-bottom: 0.5rem;
     }
+
     aside.sidebar a {
       color: white;
       text-decoration: none;
       display: block;
-      padding: 0.3rem 0.5rem;
+      padding: 0.4rem 0.6rem;
       border-radius: 4px;
     }
+
     aside.sidebar a:hover {
       background: rgba(255,255,255,0.2);
     }
 
-    /* Collapsible module lists */
+    /* ===== Collapsible ===== */
     .collapsible {
       cursor: pointer;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0.4rem 0.6rem;
     }
+
     .collapsible::after {
       content: "▸";
       font-size: 0.8rem;
       transition: transform 0.2s;
     }
+
     .collapsible.active::after {
       transform: rotate(90deg);
     }
+
     .nested {
       display: none;
       padding-left: 1rem;
     }
+
     .nested a {
       font-weight: normal;
       font-size: 0.95rem;
     }
 
-    /* Main content */
+    /* ===== Main Content ===== */
     main {
-      flex-grow: 1;
-      background: #f7f7f7;
+      margin-left: 250px;
       padding: 2rem;
+      min-height: calc(100vh - 80px);
     }
 
-    /* Card/Table styles */
+    /* ===== Footer ===== */
+    footer {
+      margin-left: 250px;
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Tables & Cards ===== */
     .module-card {
       background: white;
       border-radius: 8px;
@@ -85,6 +123,7 @@
       margin-bottom: 1.5rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -94,81 +133,90 @@
       overflow: hidden;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
+
     th, td {
       border: 1px solid #ddd;
       padding: 0.5rem;
       text-align: left;
     }
+
     th {
       background: #f2f2f2;
     }
   </style>
 </head>
+
 <body>
 
-<aside class="sidebar">
-  <h2>E-Trans Docs</h2>
-  <ul>
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-    <li><a href="{{ '/installation' | relative_url }}">Installation</a></li>
-    <li><a href="{{ '/usage' | relative_url }}">Usage</a></li>
-    <li><a href="{{ '/api' | relative_url }}">API Reference</a></li>
-    <li><a href="{{ '/axios' | relative_url }}">Axios Client</a></li>
-    <li><a href="{{ '/documentation' | relative_url }}">Documentation</a></li>
-    <li><a href="{{ '/screenshots' | relative_url }}">Screenshots</a></li>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>E-Trans Docs</h2>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/installation' | relative_url }}">Installation</a></li>
+      <li><a href="{{ '/usage' | relative_url }}">Usage</a></li>
+      <li><a href="{{ '/api' | relative_url }}">API Reference</a></li>
+      <li><a href="{{ '/axios' | relative_url }}">Axios Client</a></li>
+      <li><a href="{{ '/documentation' | relative_url }}">Documentation</a></li>
+      <li><a href="{{ '/screenshots' | relative_url }}">Screenshots</a></li>
 
-    <li>
-      <div class="collapsible">Master Modules</div>
-      <ul class="nested">
-        <li><a href="{{ '/modules/company' | relative_url }}">Company</a></li>
-        <li><a href="{{ '/modules/user-mgmt' | relative_url }}">User Management</a></li>
-        <li><a href="{{ '/modules/customer' | relative_url }}">Customer</a></li>
-        <li><a href="{{ '/modules/vehicle' | relative_url }}">Vehicle</a></li>
-        <li><a href="{{ '/modules/routes' | relative_url }}">Routes</a></li>
-        <li><a href="{{ '/modules/materials' | relative_url }}">Materials</a></li>
-      </ul>
-    </li>
+      <li>
+        <div class="collapsible">Master Modules</div>
+        <ul class="nested">
+          <li><a href="{{ '/modules/company' | relative_url }}">Company</a></li>
+          <li><a href="{{ '/modules/user-mgmt' | relative_url }}">User Management</a></li>
+          <li><a href="{{ '/modules/customer' | relative_url }}">Customer</a></li>
+          <li><a href="{{ '/modules/vehicle' | relative_url }}">Vehicle</a></li>
+          <li><a href="{{ '/modules/routes' | relative_url }}">Routes</a></li>
+          <li><a href="{{ '/modules/materials' | relative_url }}">Materials</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <div class="collapsible">Transactions</div>
-      <ul class="nested">
-        <li><a href="{{ '/modules/trips' | relative_url }}">Outward / Trips</a></li>
-        <li><a href="{{ '/modules/bill' | relative_url }}">Invoice</a></li>
-        <li><a href="{{ '/modules/invoice-list' | relative_url }}">Invoice List</a></li>
-        <li><a href="{{ '/modules/credit-note' | relative_url }}">Credit Note</a></li>
-      </ul>
-    </li>
+      <li>
+        <div class="collapsible">Transactions</div>
+        <ul class="nested">
+          <li><a href="{{ '/modules/trips' | relative_url }}">Outward / Trips</a></li>
+          <li><a href="{{ '/modules/bill' | relative_url }}">Invoice</a></li>
+          <li><a href="{{ '/modules/invoice-list' | relative_url }}">Invoice List</a></li>
+          <li><a href="{{ '/modules/credit-note' | relative_url }}">Credit Note</a></li>
+        </ul>
+      </li>
 
-    <li>
-      <div class="collapsible">Reports</div>
-      <ul class="nested">
-        <li><a href="{{ '/modules/reports' | relative_url }}">Invoice Reports</a></li>
-        <li><a href="{{ '/modules/dashboard-summary' | relative_url }}">Dashboard Summary</a></li>
-        <li><a href="{{ '/modules/gstr1-report' | relative_url }}">GSTR-1 Report</a></li>
-      </ul>
-    </li>
-  </ul>
-</aside>
+      <li>
+        <div class="collapsible">Reports</div>
+        <ul class="nested">
+          <li><a href="{{ '/modules/reports' | relative_url }}">Invoice Reports</a></li>
+          <li><a href="{{ '/modules/dashboard-summary' | relative_url }}">Dashboard Summary</a></li>
+          <li><a href="{{ '/modules/gstr1-report' | relative_url }}">GSTR-1 Report</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
 
-<main>
-  {{ content }}
-</main>
+  <!-- Main Content -->
+  <main>
+    {{ content }}
+  </main>
 
-<script>
-  // Collapsible logic
-  const collapsibles = document.querySelectorAll('.collapsible');
-  collapsibles.forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-      const nested = item.nextElementSibling;
-      if (nested.style.display === 'block') {
-        nested.style.display = 'none';
-      } else {
-        nested.style.display = 'block';
-      }
+  <!-- Footer -->
+  <footer>
+    <a href="{{ '/' | relative_url }}">⬆ Back to Home</a>
+    <p>© {{ site.time | date: "%Y" }} E-Trans Documentation</p>
+  </footer>
+
+  <!-- Collapsible Script -->
+  <script>
+    const collapsibles = document.querySelectorAll('.collapsible');
+
+    collapsibles.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+        const nested = item.nextElementSibling;
+        nested.style.display =
+          nested.style.display === 'block' ? 'none' : 'block';
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
