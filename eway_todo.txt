@@ -1,0 +1,50 @@
+java -jar target/eway-1.0.0-SNAPSHOT.jar
+
+Requirement: ->->->
+
+    create logging file ->done
+    integrate h2 (for trial only)
+    mark as paid(adjusted in Credit note)->done
+    taxation(CGST,SGCT,IGST) and excel ->done
+    GSTR1 ->done
+    company add invoice prefix-suffix ->done
+    use threading for export
+
+    company admin panel (user-company every table should have company column) -> done
+    create trial version
+    double to BigDecimal conversion -> done
+    Add Enums -> done
+    delete invoice(if CR note not generated) -> done
+    credit note ->done
+    credit note export excel ->done
+    fiscal year
+    check sorting for listings APIS -> Low
+    validate API by ROLE_UESR -> Low  ->done
+    add balance and received to detailed excel ->done
+    link-unlink users to company -> done
+    add company logo(creation &pdf) & header(username & company name) on UI -> done
+    Export GSTR1 B2B to Excel -> done
+
+ISSUES :: ->->->
+
+    refresh token issue ->done
+    UI fields validations -> Totals:	58072.22	6000	52072.219999999994 -> done
+    UI autocomplete clear results
+    org.hibernate.orm.query: HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+
+    Improve performance for large data (SXSSFWorkbook)
+
+IMPROVEMENTS :: ->->->
+
+    @Cacheable(
+        value = "dashboardSummary",
+        key = "{#year, #month, #startDate, #endDate, #search, #pageable.pageNumber, #pageable.pageSize}"
+    )
+    @EnableCaching
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-cache</artifactId>
+    </dependency>
+
+    ⚡ Optimize for large datasets
+
