@@ -85,7 +85,7 @@ const saveRoute = async () => {
 
 ## 📷 Screenshot (Example)
 
-![Routes Form Screenshot](assets/routes-form.png)
+![Routes Module](../assets/routes.png)
 
 ````id="wp2k0f"
 
