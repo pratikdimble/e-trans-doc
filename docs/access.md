@@ -17,4 +17,3 @@ layout: default
 | Companies         |   ✅   |       ❌      |
 | Users             |   ✅   |       ❌      |
 | Credit Notes      |   ✅   |       ❌      |
----
