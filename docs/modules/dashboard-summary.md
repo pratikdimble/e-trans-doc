@@ -84,5 +84,9 @@ The **Dashboard Summary Module** provides a **high-level overview of financials 
 | Customer Revenue  | `res.data.customerRevenue`       |
 | Vehicle Revenue   | `res.data.vehicleRevenue`        |
 | Bills Table       | `res.data.bills`                 |
+
+## 📷 Screenshot (Example)
+
+![Dashboard Summary](../assets/dashboard.png)
 ```
 
