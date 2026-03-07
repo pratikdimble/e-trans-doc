@@ -224,3 +224,9 @@ E-Trans Admin
 * Handles `401` with **refresh token logic**
 * Queues requests while refreshing
 * Logs out user if refresh fails
+
+---
+## 📷 Screenshot (Example)
+
+![GSTR-1 Report](../assets/gstr1.png)
+```
