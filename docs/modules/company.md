@@ -101,17 +101,3 @@ const saveCompany = async () => {
 ## 📷 Screenshot (Example)
 
 ![Add Company Screenshot](../assets/company-details.png)
-
-````
-
----
-
-This `company.md` can now go into your `docs/` folder, linked via `_sidebar.md` like:
-
-```markdown
-* [Home](README.md)
-* [Installation](installation.md)
-* [Usage](usage.md)
-* [API Reference](api.md)
-* [Company Module](company.md)
-````
