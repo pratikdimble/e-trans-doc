@@ -95,7 +95,7 @@ const saveCustomer = async () => {
 
 ## 📷 Screenshot (Example)
 
-![Customer Form Screenshot](assets/customer-form.png)
+![Customer Form Screenshot](assets/customers.png)
 
 ````
 
