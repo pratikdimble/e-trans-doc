@@ -62,6 +62,6 @@ It provides a simple interface to manage user associations efficiently with conf
 ---
 ## 📷 Screenshot (Example)
 
-![User Management Module](../assets/user-mgmt.png)
+![User Management Module](../assets/users.png)
 
 ```
