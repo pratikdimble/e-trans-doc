@@ -138,16 +138,3 @@ return Promise.reject(err)
 * Prevents infinite refresh loops.
 * Seamless user experience: requests retry automatically after token refresh.
 
----
-
-### ⚡ Optional Improvements / Tips
-
-1. **Optional Refresh Endpoint Timeout**:
-   Sometimes a short timeout for refresh requests can help avoid long delays.
-
-2. **Custom Error Handling**:
-   Could dispatch a global notification if token refresh fails.
-
-3. **Cancel Pending Requests on Logout**:
-   When `authStore.clearAuth()` is called, consider cancelling pending requests to prevent unwanted retries.
-
