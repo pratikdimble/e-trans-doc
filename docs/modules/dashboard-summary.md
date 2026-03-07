@@ -88,5 +88,3 @@ The **Dashboard Summary Module** provides a **high-level overview of financials 
 ## 📷 Screenshot (Example)
 
 ![Dashboard Summary](../assets/dashboard.png)
-```
-
