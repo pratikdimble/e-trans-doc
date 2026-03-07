@@ -80,5 +80,10 @@ The **Invoice Master Module** provides a comprehensive view of all invoices in *
 - **Confirmation Modals:** Protects against accidental deletion of invoices.
 - **Responsive Table:** Works on different screen sizes and devices.
 - **Action Buttons:** Disabled or hidden based on user role and invoice balance.
+
+---
+## 📷 Screenshot (Example)
+
+![Invoice List Module](../assets/invoice-list.png)
 ```
 
