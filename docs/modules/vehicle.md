@@ -76,16 +76,3 @@ const saveVehicle = async () => {
 ## 📷 Screenshot (Example)
 
 ![Vehicle Module](../assets/vehicles.png)
-
-````id="hvu1nt"
-
----
-
-To link this in your `_sidebar.md`:
-
-```markdown
-* [Company Module](company.md)
-* [Customer Module](customer.md)
-* [Vehicle Module](vehicle.md)
-````
-
