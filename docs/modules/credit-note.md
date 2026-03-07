@@ -66,4 +66,9 @@ It ensures proper validation against invoice balances and maintains accurate cus
   - Adjustment allowed: New amount ≤ Invoice Balance + Old Credit Note Amount
 - Customer field is **locked** if credit note is pre-associated with invoice
 - Invoice selection updates customer and max allowed amount automatically
+
+## 📷 Screenshot (Example)
+
+![Credit Note Screenshot](assets/credit-note.png)
+
 ```
