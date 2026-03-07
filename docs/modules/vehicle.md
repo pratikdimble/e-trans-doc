@@ -75,7 +75,7 @@ const saveVehicle = async () => {
 
 ## 📷 Screenshot (Example)
 
-![Vehicle Form Screenshot](assets/vehicle-form.png)
+![Vehicle Module](../assets/vehicles.png)
 
 ````id="hvu1nt"
 
