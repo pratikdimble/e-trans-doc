@@ -71,4 +71,3 @@ It ensures proper validation against invoice balances and maintains accurate cus
 
 ![Credit Note Screenshot](../assets/credit-note.png)
 
-```
