@@ -59,4 +59,9 @@ It provides a simple interface to manage user associations efficiently with conf
 - **Toast Notifications:** Immediate feedback for link/unlink actions
 - **Error Handling:** Displays messages when API calls fail
 
+---
+## 📷 Screenshot (Example)
+
+![User Management Module](../assets/user-mgmt.png)
+
 ```
