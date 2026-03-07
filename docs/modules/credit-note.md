@@ -69,6 +69,6 @@ It ensures proper validation against invoice balances and maintains accurate cus
 
 ## 📷 Screenshot (Example)
 
-![Credit Note Screenshot](assets/credit-note.png)
+![Credit Note Screenshot](../assets/credit-note.png)
 
 ```
