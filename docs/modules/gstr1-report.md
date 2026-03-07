@@ -229,4 +229,3 @@ E-Trans Admin
 ## 📷 Screenshot (Example)
 
 ![GSTR-1 Report](../assets/gstr1.png)
-```
