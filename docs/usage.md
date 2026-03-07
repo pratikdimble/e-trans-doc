@@ -8,7 +8,7 @@ This guide explains how to use the **E-Trans Dashboard** after installation, inc
 
 ### a. Login
 
-- Navigate to the login page: `http://localhost:5173/login`
+- Navigate to the login page: `http://localhost:5173/login` or `http://localhost:8080` or `http://localhost:9090`
 - Enter your credentials (username & password).
 - Upon successful login:
   - **Admin users**: Access all modules including Companies, Users, Credit Notes, Reports, and GSTR1.
