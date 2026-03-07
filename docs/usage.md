@@ -143,7 +143,3 @@ Once logged in, the main layout consists of:
 * **UI glitches:** Clear browser cache and reload the page.
 
 ---
-
-With this guide, both admins and company users can efficiently navigate and operate the **E-Trans Dashboard**.
-
-```
