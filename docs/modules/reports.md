@@ -88,5 +88,10 @@ The **Reports Master Module** in **E-Trans Dashboard** allows users to **view, f
 - **Dropdowns:** Customer list is fetched dynamically with large dataset support  
 - **Loading Spinner:** Appears on Export or API fetch operations  
 - **Responsive Tables:** Table adapts to screen width while keeping all columns readable
+
+---
+## 📷 Screenshot (Example)
+
+![Invoice Reports](../assets/reports.png)
 ```
 
