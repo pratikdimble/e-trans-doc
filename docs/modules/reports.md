@@ -93,5 +93,3 @@ The **Reports Master Module** in **E-Trans Dashboard** allows users to **view, f
 ## 📷 Screenshot (Example)
 
 ![Invoice Reports](../assets/reports.png)
-```
-
