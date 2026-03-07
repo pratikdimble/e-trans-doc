@@ -36,6 +36,11 @@ This page contains module-wise screenshots of the system.
 
 ---
 
+### Taxation
+![Materials Module](assets/taxation.png)
+
+---
+
 ## Transactions
 
 ### Outward / Trips
