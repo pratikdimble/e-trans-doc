@@ -87,16 +87,3 @@ const saveRoute = async () => {
 
 ![Routes Module](../assets/routes.png)
 
-````id="wp2k0f"
-
----
-
-You can now link this in your `_sidebar.md`:
-
-```markdown
-* [Company Module](company.md)
-* [Customer Module](customer.md)
-* [Vehicle Module](vehicle.md)
-* [Routes Module](routes.md)
-````
-
