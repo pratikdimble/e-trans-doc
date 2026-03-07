@@ -37,7 +37,7 @@ This page contains module-wise screenshots of the system.
 ---
 
 ### Taxation
-![Materials Module](assets/taxation.png)
+![Taxation Module](assets/taxation.png)
 
 ---
 
