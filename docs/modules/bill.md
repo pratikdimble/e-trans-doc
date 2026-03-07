@@ -89,5 +89,5 @@ It allows users to select trips, compute totals, apply taxes, and manage custome
 
 ## 📷 Screenshot (Example)
 
-![Invoice Form Screenshot](assets/invoice.png)
+![Invoice Form Screenshot](../assets/invoice.png)
 ```
