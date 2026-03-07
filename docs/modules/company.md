@@ -100,7 +100,7 @@ const saveCompany = async () => {
 
 ## 📷 Screenshot (Example)
 
-![Add Company Screenshot](assets/company-details.png)
+![Add Company Screenshot](../assets/company-details.png)
 
 ````
 
