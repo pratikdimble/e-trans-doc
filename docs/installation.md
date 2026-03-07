@@ -1,11 +1,11 @@
-# Installation & Setup
+# Installation & Setup (Local Environment)
 
 This guide explains how to set up the **E-Trans Dashboard** on your local machine, including backend, frontend, and database configuration.
 
 ---
 
 ## 1️⃣ Clone the Repository
-
+**Required request for Repository access**
 ```bash
 git clone https://github.com/yourusername/e-trans-dashboard.git
 cd e-trans-dashboard
@@ -113,4 +113,3 @@ Once both backend and frontend are running:
 * The backend supports JWT authentication, so tokens must be stored and passed with requests.
 * Vue 3 components and Pinia stores are reactive; any changes in the auth store will automatically update UI elements like sidebar links.
 
-```
