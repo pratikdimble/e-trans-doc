@@ -72,17 +72,3 @@ const saveMaterial = async () => {
 ## 📷 Screenshot (Example)
 
 ![Materials Module](../assets/materials.png)
-
-````id="xz1mno"
-
----
-
-To link this in your `_sidebar.md`:
-
-```markdown
-* [Company Module](company.md)
-* [Customer Module](customer.md)
-* [Vehicle Module](vehicle.md)
-* [Routes Module](routes.md)
-* [Materials Module](materials.md)
-````
