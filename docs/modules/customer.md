@@ -96,11 +96,5 @@ const saveCustomer = async () => {
 ## 📷 Screenshot (Example)
 
 ![Customer Module](../assets/customers.png)
----
 
-This file should go into your `docs/` folder and can be linked in `_sidebar.md` like:
 
-```markdown
-* [Company Module](company.md)
-* [Customer Module](customer.md)
-````
