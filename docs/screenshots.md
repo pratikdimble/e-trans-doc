@@ -12,7 +12,7 @@ This page contains module-wise screenshots of the system.
 ---
 
 ### User Management
-![User Management Module](assets/user-mgmt.png)
+![User Management Module](assets/users.png)
 
 ---
 
