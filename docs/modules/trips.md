@@ -100,6 +100,6 @@ const saveTrip = async () => {
 
 ## 📷 Screenshot (Example)
 
-![Trip Form Screenshot](assets/trip-form.png)
+![Trips Module](../assets/outward.png)
 
 ```
