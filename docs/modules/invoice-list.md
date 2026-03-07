@@ -85,5 +85,3 @@ The **Invoice Master Module** provides a comprehensive view of all invoices in *
 ## 📷 Screenshot (Example)
 
 ![Invoice List Module](../assets/invoice-list.png)
-```
-
