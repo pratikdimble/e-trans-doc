@@ -227,6 +227,3 @@ This document describes the **RESTful API endpoints** for the **E-Trans Dashboar
 ---
 
 > ⚠️ All endpoints (except `/auth/login` and `/auth/register`) require **JWT Bearer Token** in the `Authorization` header.
-
-```
-
