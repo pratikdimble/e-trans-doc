@@ -2,7 +2,6 @@
 layout: default
 ---
 # Role-Based Access
----
 
 | Module            | Admin | Company User |
 | ----------------- | :---: | :----------: |
