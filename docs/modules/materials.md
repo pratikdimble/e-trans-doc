@@ -71,7 +71,7 @@ const saveMaterial = async () => {
 
 ## 📷 Screenshot (Example)
 
-![Materials Form Screenshot](assets/materials-form.png)
+![Invoice List Module](../assets/invoice-list.png)
 
 ````id="xz1mno"
 
