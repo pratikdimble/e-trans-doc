@@ -1,80 +1,114 @@
-# Application Setup Guide
+# 📘 Developer-Friendly Application Setup Guide
+
+## 🔧 Prerequisites
+
+Make sure you have the following installed:
+
+* **Java 17+**
+* **PostgreSQL**
+* **Maven** *(optional, if building from source)*
+
 ---
-## 1. Create Database
 
-Create a database with the following name:
+## 🗄️ Database Setup
 
-**outward-db**
-		
-## 2. Create Schema
+### 1. Create Database
 
-Inside the database, create a schema named:
+```sql
+CREATE DATABASE outward-db;
+```
+ or 
+ Create a database with the following name:
+ 
+ ```
+outward-db
+```
 
-**finance**
-		
-## 3. Download Application JAR
+### 2. Create Schema
 
-Download the **LATEST VERSION** application JAR file (version 3.4.1).
-	
+```sql
+CREATE SCHEMA finance;
+```
+or Inside the database, create the following schema:
 
-## 4. Run the Application
+```
+finance
+```
 
-Open Command Prompt (CMD) and run the following command:
+> Ensure your DB user has full privileges on this schema.
 
-**java -jar <jar-path>**
+---
 
-Replace <jar-path> with the actual path of the downloaded JAR file.
-		
+## 📦 Download & Run Application
 
-## 5. Application Startup
+### Download Application
 
-Once the command is executed:
+Download the **latest version (eg. v3.4.2)** of the application JAR file.
 
-The application will start running
+### Option 1: Run JAR
 
-The database setup will be completed automatically
-	
+Open Command Prompt (CMD) and execute:
 
-## 6. Access the Application
+```
+java -jar <jar-path>
+```
 
-Open your browser and go to:
+Replace `<jar-path>` with the actual path of the downloaded JAR file.
 
-**http://localhost:8080/**
-		
-## 7. Create User Account
+```bash
+Eg. java -jar app-3.4.2.jar
+```
 
-**Sign up** and create a user.
+### Option 2: Run via IDE
 
-After creating the user, **open the database**.
+* Import project
+* Run main class
 
-Navigate to:
+---
 
-public → users
+## 🚀 Access Application
 
-Update the role of the user:
+```
+http://localhost:8080/
+```
 
-**ROLE_USER → ROLE_ADMIN**
+---
 
-This allows the user to create a company.
+## 👤 Initial Setup Flow
 
-## 8. Create Company
+### 1. Create User
 
-**Log in** again after updating the role.
+* Sign up via UI
 
-**Create a new company.**
+### 2. Login as Super Admin
 
-## 9. Refresh Company Access
+```
+username: superadmin
+password: Pd@#$2026
+```
 
-After successfully creating the company:
+### 3. Promote User
 
-**Logout**
+* Go to Admin Panel
+* Select user
+* Assign **Admin Role**
 
-**Login again**
+---
 
-This ensures the company changes are reflected in the application.
+## 🏢 Company Setup
 
-## 10. Start Using the Application
+* Login with updated user
+* Create a company
 
-**You are now ready to use the application.**
+---
 
-**🎉 Happy Exploration!**
+## 🔄 Refresh Access
+
+* Logout
+* Login again
+
+---
+
+## ✅ You're Ready!
+
+Start using the application 🎉
